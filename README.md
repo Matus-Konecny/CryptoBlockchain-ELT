@@ -138,6 +138,7 @@ CREATE OR REPLACE TABLE FACT_TRANSACTIONS AS (
            stg."value", stg."fee", stg."nonce", stg."numLogs", stg."transactionIndex", stg."status",
            -- WINDOW FUNCTION #1
            ROW_NUMBER() OVER (PARTITION BY b.id_block ORDER BY stg."transactionIndex") AS tx_order_in_block,
+           -- WINDOW FUNCTION #2
            SUM(stg."fee") OVER (PARTITION BY b.id_block ORDER BY stg."transactionIndex" 
                                 ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_fee_in_block,
            -- TECHNICKÉ
