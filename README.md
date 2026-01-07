@@ -141,7 +141,7 @@ drop table UNIFIED_STG;
 Dashboard obsahuje `5 vizualizácií`.
 
 <p align="center">
-  <img src="https://github.com/Matus-Konecny/CryptoBlockchain-ETL/blob/main/sql/dashboard.sql" alt="Dashboard">
+  <img src="https://github.com/Matus-Konecny/CryptoBlockchain-ETL/blob/main/img/blockchain_dashboard.png" alt="Dashboard">
   <br>
   <em>Obrázok 5 Dashboard Blockchain Crypto datasetu</em>
 </p>
