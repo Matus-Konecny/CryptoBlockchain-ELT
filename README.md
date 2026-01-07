@@ -17,8 +17,8 @@ Analyzované dáta podporujú blockchain monitoring a kryptomenové analytické 
 - Rizikového manažmentu adries (whitelisting/blacklisting)
 - Optimalizácie transakcií podľa siete a času
 - Benchmarkingu výkonu rôznych blockchainov
-
 Výsledná hviezdna schéma umožňuje identifikovať trendy ako najaktívnejšie hodiny, najefektívnejšie siete alebo anomálie v transakčnej aktivite, čím poskytuje praktické insighty pre kryptomenové burzy, wallet providerov a DeFi platformy.
+
 ---
 ## **3. ELT proces v Snowflake**
 Proces ELT zahŕňa tri základné kroky – extrakciu (Extract), načítanie (Load) a transformáciu (Transform) dát. V prostredí Snowflake bol tento postup aplikovaný s cieľom spracovať a pripraviť údaje zo staging vrstvy do podoby viacdimenzionálneho dátového modelu, ktorý umožňuje efektívnu analýzu a následnú tvorbu vizualizačných výstupov.
