@@ -1,5 +1,25 @@
 # CryptoBlockchain-ETL
 ---
+## **1. Úvod a popis zdrojových dát**
+V tejto práci sa zameriavame na analýzu transakčných dát z blockchain sietí kryptomien Bitcoin, Ethereum a Litecoin. Cieľom je porozumieť:
+- dynamike transakcií v jednotlivých blockchainoch,
+- efektivite poplatkov za transakcie (gas fees),
+- správe adries a kontraktov,
+- trendom v objeme transakcií a ich časovom správaní.
+
+Zdrojové dáta pochádzajú z databázy Amberdata Blockchain dostupnej prostredníctvom Snowflake Marketplace na adrese BLOCKCHAIN_CRYPTO_DATA.AMBERDATA_BLOCKCHAIN. Dataset obsahuje štruktúrované údaje o pending transakciách z troch hlavných kryptomien, ktoré boli spracované do jednotnej staging tabuľky UNIFIED_STG.
+
+Účelom ELT procesu bolo zlúčiť heterogénne blockchain dáta, očistiť ich a transformovať do hviezdneho schémy, ktorá umožňuje komplexnú analýzu transakčnej aktivity naprieč rôznymi kryptomenami.
+
+#### Biznis kontext a význam analýzy
+Analyzované dáta podporujú blockchain monitoring a kryptomenové analytické procesy v oblasti:
+- Tréningu ML modelov na predikciu poplatkov
+- Rizikového manažmentu adries (whitelisting/blacklisting)
+- Optimalizácie transakcií podľa siete a času
+- Benchmarkingu výkonu rôznych blockchainov
+
+Výsledná hviezdna schéma umožňuje identifikovať trendy ako najaktívnejšie hodiny, najefektívnejšie siete alebo anomálie v transakčnej aktivite, čím poskytuje praktické insighty pre kryptomenové burzy, wallet providerov a DeFi platformy.
+---
 ## **3. ELT proces v Snowflake**
 Proces ELT zahŕňa tri základné kroky – extrakciu (Extract), načítanie (Load) a transformáciu (Transform) dát. V prostredí Snowflake bol tento postup aplikovaný s cieľom spracovať a pripraviť údaje zo staging vrstvy do podoby viacdimenzionálneho dátového modelu, ktorý umožňuje efektívnu analýzu a následnú tvorbu vizualizačných výstupov.
 
