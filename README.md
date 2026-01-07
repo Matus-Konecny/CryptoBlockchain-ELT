@@ -19,6 +19,35 @@ Analyzované dáta podporujú blockchain monitoring a kryptomenové analytické 
 - Benchmarkingu výkonu rôznych blockchainov
 
 Výsledná hviezdna schéma umožňuje identifikovať trendy ako najaktívnejšie hodiny, najefektívnejšie siete alebo anomálie v transakčnej aktivite, čím poskytuje praktické insighty pre kryptomenové burzy, wallet providerov a DeFi platformy.
+---
+### **1.1 Dátová architektúra**
+
+### **ERD diagram**
+Surové blockchain dáta sú usporiadané v staging tabuľkách získaných z Snowflake Marketplace, ktoré reprezentujú relačný model pending transakcií troch kryptomien. Štruktúra zdrojových dát je znázornená na **entitno-relačnom diagrame (ERD)**:
+
+<p align="center">
+  <img src="https://github.com/Matus-Konecny/CryptoBlockchain-ETL/blob/main/img/erd_schema.png" alt="ERD Schema">
+  <br>
+  <em>Obrázok 1 Entitno-relačná schéma</em>
+</p>
+
+---
+## **2 Dimenzionálny model**
+Bol navrhnutý **hviezdičkový model (star schema)** podľa Kimballovej metodológie, ktorý obsahuje 1 faktovú tabuľku **`FACT_TRANSACTIONS`** prepojenú s 7 dimenziami:
+- **`DIM_COIN`** - kryptomena, blockchain ID -> Identifikácia siete
+- **`DIM_BLOCK`** - block hash, block number -> Kontext bloku
+- **`DIM_TRANSACTION_TYPE`** - typ, status, coinbase -> Klasifikácia transakcie
+- **`DIM_ADDRESS`**	- from/to/contract adresy -> Účastníci transakcie
+- **`DIM_TIME`** - timestamp, date, hour -> Časová dimenzia
+- **`DIM_GAS`**	- gas price, gas used -> Efektivita transakcie
+- **`DIM_OP_PROTOCOL`** - protokolové parametre -> Technické charakteristiky
+
+Štruktúra hviezdicového modelu je znázornená na diagrame nižšie. Diagram jasne zobrazuje vzťahy medzi faktovou tabuľkou a dimenziami prostredníctvom surrogátnych kľúčov (hash), čo optimalizuje analytické dotazy.
+<p align="center">
+  <img src="https://github.com/Matus-Konecny/CryptoBlockchain-ETL/blob/main/img/star_schema.png" alt="Star Schema">
+  <br>
+  <em>Obrázok 2 Schéma hviezdy</em>
+</p>
 
 ---
 ## **3. ELT proces v Snowflake**
