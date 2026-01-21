@@ -1,4 +1,4 @@
-# CryptoBlockchain-ETL
+# CryptoBlockchain-ELT
 ---
 ## **1. Úvod a popis zdrojových dát**
 V tejto práci sa zameriavame na analýzu transakčných dát z blockchain sietí kryptomien Bitcoin, Ethereum a Litecoin. Cieľom je porozumieť:
